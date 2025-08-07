@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+            <div class="datetime">
+                <div id="current-time"></div>
+                <div id="current-date"></div>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="location-input" placeholder="Enter city or state name...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="weather-container" id="weather-container">
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading weather data...</p>
+            </div>
+
+            <div class="weather-card" id="weather-card" style="display: none;">
+                <div class="location-info">
+                    <h2 id="location-name"></h2>
+                    <p id="location-coords"></p>
+                </div>
+
+                <div class="current-weather">
+                    <div class="temperature-section">
+                        <div class="main-temp">
+                            <span id="temperature">--</span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <div class="weather-icon">
+                            <i id="weather-icon" class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Humidity</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind Speed</span>
+                            <span id="wind-speed">-- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Feels Like</span>
+                            <span id="feels-like">--°C</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <span>Precipitation</span>
+                            <span id="precipitation">-- mm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast-section">
+                    <h3>7-Day Forecast</h3>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="error-message" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="error-text">Location not found. Please try again.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
